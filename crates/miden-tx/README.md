@@ -12,7 +12,7 @@ The first requirement is to have a `DataStore` implementation. `DataStore` objec
 let store = DataStore:new();
 ```
 
-Once a store is available, a `TransactionExecutor` object can be used to execute a transaction. Consuming a zero or more notes, and possibly calling some of the account's code.
+Once a store is available, a `TransactionExecutor` object can be used to execute a transaction. Consuming zero or more notes, and possibly calling some of the account's code.
 
 ```rust
 let executor = TransactionExecutor::new(store);
