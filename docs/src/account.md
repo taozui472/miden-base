@@ -60,7 +60,7 @@ An `Account` ID can be encoded in different formats:
  
 2. **Hexadecimal** (debugging):
    - Example: `0x140fa04a1e61fc100000126ef8f1d6`
-   - Frequenty used encoding for blockchain addresses
+   - Frequently used encoding for blockchain addresses
      
 ### Code
 
@@ -93,7 +93,7 @@ Large amounts of fungible and non-fungible assets can be stored in the `Account`
 ### Nonce
 
 > [!Note]
-> A counter incremented with each state update to the `Account`.
+> A counter is incremented with each state update to the `Account`.
 
 The nonce enforces ordering and prevents replay attacks. It must strictly increase with every `Account` state update. The increment must be less than $2^{32}$ but always greater than the previous nonce, ensuring a well-defined sequence of state changes.
 
@@ -140,7 +140,7 @@ Type and mutability are encoded in the two most significant bits of the `Account
 
 ### Account storage mode
 
-Users can choose whether their `Account`s are stored publicly or privately. The preference is encoded in the third and forth most significant bits of the `Account`s [ID](#id):
+Users can choose whether their `Account`s are stored publicly or privately. The preference is encoded in the third and fourth most significant bits of the `Account`s [ID](#id):
 
 - **Public `Account`s:**
   The `Account`’s state is stored on-chain, similar to how `Account`s are stored in public blockchains like Ethereum. Contracts that rely on a shared, publicly accessible state (e.g., a DEX) should be public.
