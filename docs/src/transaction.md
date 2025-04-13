@@ -75,7 +75,7 @@ Then the P2ID note script is being executed. The script starts by reading the no
 
 If the check passes, the note script pushes the assets it holds into the account's vault. For every asset the note contains, the script calls the `wallets::basic::receive_asset` method exposed by the account's wallet component. The `wallets::basic::receive_asset` procedure calls `account::add_asset`, which cannot be called from the note itself. This allows accounts to control what functionality to expose, e.g. whether the account supports receiving assets or not, and the note cannot bypass that.
 
-After the assets are stored in the account's vault, the transaction script is being executed. The script calls `auth::basic::auth_tx_rpo_falcon512` which is explicitly exposed in the account interface. The method is used to verify a provided signature against a public key stored in the account's storage and a commitment to this specific transaction. If the signature can be verified, the method increments the nonce.
+After the assets are stored in the account's vault, the transaction script is executed. The script calls `auth::basic::auth_tx_rpo_falcon512` which is explicitly exposed in the account interface. The method is used to verify a provided signature against a public key stored in the account's storage and a commitment to this specific transaction. If the signature can be verified, the method increments the nonce.
 
 The Epilogue finalizes the transaction by computing the final account hash, asserting the nonce increment and checking that no assets were created or destroyed in the transaction — that means the net sum of all assets must stay the same.
 
